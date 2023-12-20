@@ -21,7 +21,7 @@ class GitSource implements SourceRetriever {
             fetch.parentFile.mkdirs()
         }
         def command = "git clone -b $branch --single-branch $sourceURL $repository@$branch"
-        println command
+
         def processBuilder = new ProcessBuilder(command.split(' '))
                         .inheritIO()
                         .directory(target)
